@@ -28,7 +28,7 @@ class TfRecordGenerator:
                 for image_annotations in dataset[subset]:
                     annotation_dict = json.loads(json.dumps(image_annotations))
                     tf_example = self._create_tf_example(annotation_dict['source-ref'],
-                                                         annotation_dict['bees-500']['annotations'])
+                                                         annotation_dict['example-job']['annotations'])
                     writer.write(tf_example.SerializeToString())
                 writer.close()
 
